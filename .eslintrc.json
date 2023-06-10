@@ -21,6 +21,7 @@
         "react/react-in-jsx-scope": "off",
         "eol-last":"off",
         "no-multiple-empty-lines":"off",
-        "indent":"off"
+        "indent":"off",
+        "react/prop-types": ["error", {"ignore": ["navigation"] }]
     }
 }

@@ -3,13 +3,13 @@ import {
     View, ScrollView, Text, StyleSheet,
 } from 'react-native';
 
-import AppBar from '../components/AppBar';
+
 import CircleButton from '../components/CircleButton';
 
-export default function MemoDetailScreen() {
+export default function MemoDetailScreen(props) {
+    const { navigation } = props;
     return (
         <View style={styles.container}>
-            <AppBar />
             <View style={styles.memoHeader}>
                 <Text style={styles.memoTitle}>買い物リスト</Text>
                 <Text style={styles.memoDate}>2020年12月24日 10:00</Text>
@@ -21,11 +21,16 @@ export default function MemoDetailScreen() {
                     す。本文用なので使い方を間違えると不自然に見えることもありますので要注意。
                 </Text>
             </ScrollView>
-            <CircleButton style={{top: 160, buttom: 'auto' }} name='edit-2' />
+            <CircleButton 
+                style={{top: 60, buttom: 'auto' }} 
+                name='edit-2' 
+                onPress={() => { navigation.navigate('MemoEdit'); }}
+            />
         </View>
 
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {
