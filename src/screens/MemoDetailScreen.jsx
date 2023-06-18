@@ -27,7 +27,7 @@ export default function MemoDetailScreen(props) {
                 setMemo({
                     id: doc.id,
                     bodyText: data.bodyText,
-                    updatedAt: data.updateAt.toDate(),
+                    updatedAt: data.updatedAt.toDate(),
                 });
             });
         }
@@ -48,7 +48,7 @@ export default function MemoDetailScreen(props) {
             <CircleButton 
                 style={{top: 60, buttom: 'auto' }} 
                 name='edit-2' 
-                onPress={() => { navigation.navigate('MemoEdit'); }}
+                onPress={() => { navigation.navigate('MemoEdit', { id: memo.id, bodyText: memo.bodyText}); }}
             />
         </View>
 
